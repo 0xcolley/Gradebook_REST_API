@@ -43,7 +43,7 @@ const connection = mysql.createConnection(connectionConfig);
 
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://cmsc508-frontend-deployment.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: ['Content-Type', 'Authorization']
 };
