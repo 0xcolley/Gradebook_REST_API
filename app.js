@@ -27,7 +27,7 @@ const getGradeForAssignment = require('./services/student/gradeForAssignment.js'
 const mysql = require('mysql2');
 const fs = require('fs');
 const dotenv = require('dotenv').config();
-
+console.log('Database Host:', process.env.HOST);
 const app = express();
 const connectionConfig = {
     host: process.env.HOST,
