@@ -42,13 +42,18 @@ const connectionConfig = {
 const connection = mysql.createConnection(connectionConfig);
 
 
+const whitelist = ['https://cmsc508-frontend-deployment.vercel.app'];
+
 const corsOptions = {
-    origin: 'https://cmsc508-frontend-deployment.vercel.app/',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: ['Content-Type', 'Authorization']
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 };
 
-app.use(cors(corsOptions));
 
 // Logging Middleware
 app.use((req, res, next) => {
