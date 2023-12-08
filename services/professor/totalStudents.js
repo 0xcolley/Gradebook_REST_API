@@ -12,7 +12,7 @@ router.get('/totalStudents', (req, res) => {
             return res.status(500).send('Error fetching total number of students');
         }
 
-        res.json({ totalStudents: results[0].total });
+        res.json({ results });
     });
 });
 
