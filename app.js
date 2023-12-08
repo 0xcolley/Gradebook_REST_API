@@ -23,6 +23,8 @@ const getAllStudents = require('./services/professor/getAllStudent.js');
 const addAssignment = require('./services/professor/addAssignmentToClass.js');
 const getClassesForStudent = require('./services/professor/studentClasses.js');
 const getGradeForAssignment = require('./services/student/gradeForAssignment.js');
+const totalStudents = require('./services/professor/totalStudents.js')
+
 
 const mysql = require('mysql2');
 const fs = require('fs');
@@ -76,6 +78,8 @@ app.use('/api', getAllStudents);
 app.use('/api', addAssignment);
 app.use('/api', getClassesForStudent);
 app.use('/api', getGradeForAssignment);
+app.use('/api', totalStudents)
+
 
 app.use((err, req, res, next) => {
     console.error('Error:', err.stack);
