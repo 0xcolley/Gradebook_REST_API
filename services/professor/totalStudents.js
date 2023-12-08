@@ -4,7 +4,7 @@ const router = express.Router();
 
 // GET route to get the total number of students
 router.get('/totalStudents', (req, res) => {
-    const query = 'SELECT COUNT(*) AS total FROM users WHERE user_type = "STUDENT"';
+    const query = 'SELECT COUNT(*) FROM students;';
 
     connection.query(query, (error, results) => {
         if (error) {
