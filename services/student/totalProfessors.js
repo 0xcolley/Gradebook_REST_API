@@ -4,7 +4,7 @@ const router = express.Router();
 
 // GET route to get the total number of professors
 router.get('/totalProfessors', (req, res) => {
-    const query = 'SELECT COUNT(*) FROM professors;';
+    const query = 'SELECT COUNT(professor_id) FROM professors;';
 
     connection.query(query, (error, results) => {
         if (error) {
@@ -12,7 +12,7 @@ router.get('/totalProfessors', (req, res) => {
             return res.status(500).send('Error fetching total number of professors');
         }
 
-        res.json({ totalProfessors: results['COUNT(*)'] });
+        res.json({ results });
     });
 });
 
