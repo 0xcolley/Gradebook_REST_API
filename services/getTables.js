@@ -17,7 +17,7 @@ router.get('/listAllTables', (req, res) => {
         }
 
         
-        res.json({result});
+        res.json({results});
     });
 });
 
