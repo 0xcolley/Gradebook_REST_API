@@ -5,9 +5,7 @@ const router = express.Router();
 
 router.get('/listAllTables', (req, res) => {
     const query = `
-        SELECT table_name
-        FROM information_schema.tables
-        WHERE table_schema = 'gradebook'
+       SHOW TABLES'
     `;
 
     connection.query(query, (error, results) => {
