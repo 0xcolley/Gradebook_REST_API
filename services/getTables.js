@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/listAllTables', (req, res) => {
     const query = `
-       SHOW TABLES'
+       SHOW TABLES
     `;
 
     connection.query(query, (error, results) => {
