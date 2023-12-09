@@ -16,8 +16,8 @@ router.get('/listAllTables', (req, res) => {
             return res.status(500).send('Error fetching table list');
         }
 
-        const tableNames = results.map(row => row.table_name);
-        res.json(tableNames);
+        
+        res.json({result});
     });
 });
 
