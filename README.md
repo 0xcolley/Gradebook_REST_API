@@ -1,0 +1,1 @@
+This was completed for part of CMSC508 at Virginia Commonwealth University. The goal was to write a full-stack gradebook application with both a react frontend and Express.js backend. The backend is written using Node.js and MySQL 8.
